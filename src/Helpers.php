@@ -4,8 +4,8 @@ namespace Flunorette;
 
 use Flunorette\Bridges\Nette\Diagnostics\ConnectionPanel;
 use Flunorette\Reflections\IReflection;
-use Nette\Diagnostics\Debugger;
 use Nette\Utils\Strings;
+use Tracy\Debugger;
 
 class Helpers {
 
@@ -196,11 +196,7 @@ class Helpers {
 		$panel = new ConnectionPanel($connection);
 		$panel->explain = $explain;
 		$panel->name = $name;
-		if (isset(Debugger::$bar)) { //BC with 2.0
-			Debugger::$bar->addPanel($panel);
-		} else { //2.1
-			Debugger::getBar()->addPanel($panel);
-		}
+        Debugger::getBar()->addPanel($panel);
 		return $panel;
 	}
 

@@ -4,9 +4,8 @@
  * Ability to debug in browser with all the advantages of Tracy (Nette\Debugger)
  */
 use Flunorette\Bridges\Nette\Diagnostics\ConnectionPanel;
-use Nette\Diagnostics\Debugger;
-use Nette\Diagnostics\IBarPanel;
-
+use Tracy\Debugger;
+use Tracy\IBarPanel;
 
 
 if (isset($_SERVER['REMOTE_ADDR'])) {
@@ -35,13 +34,8 @@ if (isset($_SERVER['REMOTE_ADDR'])) {
 
 	$panel = new ConnectionPanel();
 
-	if (null == Debugger::$bar) {
-		Debugger::getBar()->addPanel($panel);
-		Debugger::getBar()->addPanel(new FakeStyle);
-	} else {
-		Debugger::$bar->addPanel($panel);
-		Debugger::$bar->addPanel(new FakeStyle);
-	}
+    Debugger::getBar()->addPanel($panel);
+    Debugger::getBar()->addPanel(new FakeStyle);
 
 
 

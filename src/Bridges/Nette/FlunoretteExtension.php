@@ -7,6 +7,7 @@ use Nette\DI\Compiler;
 use Nette\DI\CompilerExtension;
 use Nette\DI\ContainerBuilder;
 use Nette\DI\Statement;
+use Tracy\Debugger;
 
 class FlunoretteExtension extends CompilerExtension {
 
@@ -74,7 +75,7 @@ class FlunoretteExtension extends CompilerExtension {
 				->setClass('Flunorette\\Connection', array($info['dsn'], $info['user'], $info['password'], $info['options']))
 				->setAutowired($info['autowired'])
 				->addSetup('setCacheStorage')
-				->addSetup('Nette\Diagnostics\Debugger::getBlueScreen()->addPanel(?)', array(
+				->addSetup('Tracy\Debugger::getBlueScreen()->addPanel(?)', array(
 				'Flunorette\Bridges\Nette\Diagnostics\ConnectionPanel::renderException'
 			));
 
