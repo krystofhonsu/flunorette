@@ -10,19 +10,27 @@ use Flunorette\Hydrators\HydratorSelection;
 use Flunorette\InvalidArgumentException;
 use Flunorette\InvalidStateException;
 use Flunorette\IQueryObject;
-use Flunorette\IReflection;
 use Flunorette\Queries\DeleteQuery;
 use Flunorette\Queries\InsertQuery;
 use Flunorette\Queries\Query;
 use Flunorette\Queries\QueryContext;
 use Flunorette\Queries\SelectQuery;
 use Flunorette\Queries\UpdateQuery;
+use Flunorette\Reflections\IReflection;
 use Flunorette\SqlLiteral;
 use Flunorette\Statement;
-use Nette\Object;
+use Nette\SmartObject;
 use Nette\Utils\Arrays;
 
-class Selection extends Object implements IQueryObject, \Iterator, \ArrayAccess, \Countable {
+
+/**
+ * Class Selection
+ * @package Flunorette\Selections
+ * @property string $name
+ */
+class Selection implements IQueryObject, \Iterator, \ArrayAccess, \Countable {
+
+    use SmartObject;
 
 	/** @var HydratorSelection */
 	static protected $hydrator;

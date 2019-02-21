@@ -2,9 +2,11 @@
 
 namespace Flunorette\Reflections;
 
-use Nette\Object;
+use Nette\SmartObject;
 
-class ConventionalReflection extends Object implements IReflection {
+class ConventionalReflection implements IReflection {
+
+    use SmartObject;
 
 	/** @var string */
 	protected $primary;

@@ -5,9 +5,11 @@ namespace Flunorette\Selections;
 use Flunorette\InvalidStateException;
 use Flunorette\Reflections\ReflectionException;
 use Flunorette\UndeclaredColumnException;
-use Nette\Object;
+use Nette\SmartObject;
 
-class ActiveRow extends Object implements \IteratorAggregate, \ArrayAccess, \Countable {
+class ActiveRow implements \IteratorAggregate, \ArrayAccess, \Countable {
+
+    use SmartObject;
 
 	/** @var Selection */
 	protected $selection;

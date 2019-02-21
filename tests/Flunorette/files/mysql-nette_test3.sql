@@ -1,4 +1,4 @@
-/*!40102 SET storage_engine = InnoDB */;
+/*!40102 SET default_storage_engine = InnoDB */;
 
 DROP DATABASE IF EXISTS nette_test;
 CREATE DATABASE IF NOT EXISTS nette_test;
@@ -42,5 +42,5 @@ CREATE TABLE `types` (
 
 INSERT INTO `types` (`unsigned_int`, `int`, `smallint`, `tinyint`, `mediumint`, `bigint`, `bit`, `decimal`, `decimal2`, `float`, `double`, `date`, `time`, `datetime`, `timestamp`, `year`, `char`, `varchar`, `binary`, `varbinary`, `blob`, `tinyblob`, `mediumblob`, `longblob`, `text`, `tinytext`, `mediumtext`, `longtext`, `enum`, `set`) VALUES
 (1,	1,	1,	1,	1,	1,	1,	1,	1.1,	1,	1.1,	'2012-10-13',	'10:10:10',	'2012-10-13 10:10:10',	'2012-10-13 10:10:10',	'2012',	'a',	'a',	'a',	'a',	'a',	'a',	'a',	'a',	'a',	'a',	'a',	'a',	'a',	'a'),
-(0,	0,	0,	0,	0,	0,	0,	0,	0.5,	0.5,	0.5,	'0000-00-00',	'00:00:00',	'0000-00-00 00:00:00',	'0000-00-00 00:00:00',	'2000',	'',	'',	'\0',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'b',	''),
+(0,	0,	0,	0,	0,	0,	0,	0,	0.5,	0.5,	0.5,	'1970-01-01',	'00:00:00',	'1000-01-01 00:00:00',	NULL,	'2000',	'',	'',	'\0',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'b',	''),
 (NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL);

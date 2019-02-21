@@ -11,7 +11,9 @@ use PDOException;
 /**
  * Debug panel for Flunorette.
  */
-class ConnectionPanel extends Nette\Object implements Nette\Diagnostics\IBarPanel {
+class ConnectionPanel implements Nette\Diagnostics\IBarPanel {
+
+    use Nette\SmartObject;
 
 	/** @var int maximum SQL length */
 	static public $maxLength = 1000;

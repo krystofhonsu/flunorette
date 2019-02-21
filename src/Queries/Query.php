@@ -87,7 +87,7 @@ abstract class Query implements IQueryObject {
 	}
 
 	private function clauseNotEmpty($clause) {
-		if ($this->clauses[$clause]) {
+		if ($this->clauses[$clause] && is_countable($clause)) {
 			return (boolean) count($this->context->statements[$clause]);
 		} else {
 			return (boolean) $this->context->statements[$clause];

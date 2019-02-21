@@ -6,9 +6,11 @@ use Flunorette\Connection;
 use Flunorette\Drivers\IDriver;
 use Flunorette\Reflections\IReflection;
 use Flunorette\SqlPreprocessor;
-use Nette\Object;
+use Nette\SmartObject;
 
-class QueryContext extends Object {
+class QueryContext {
+
+    use SmartObject;
 
 	/** @var Query */
 	protected $activeQuery;

@@ -17,7 +17,7 @@ use Flunorette\Selections\Selection;
 use Flunorette\Selections\SelectionFactory;
 use Nette\Caching\Cache;
 use Nette\Caching\IStorage;
-use Nette\Object;
+use Nette\SmartObject;
 use PDO;
 
 /**
@@ -25,8 +25,13 @@ use PDO;
  * @method UpdateQuery createUpdate($table)
  * @method DeleteQuery createDelete($table)
  * @method InsertQuery createInsert($table)
+ * @property string $supplementalDriver
  */
-class Connection extends Object {
+class Connection {
+
+    use SmartObject {
+        __call as protected traitCall;
+    }
 
 	/** @var array */
 	static public $defaultOptions = array(
@@ -194,7 +199,7 @@ class Connection extends Object {
 			$queryContext = new QueryContext(reset($args), $this);
 			return new $class($queryContext);
 		}
-		return parent::__call($name, $args);
+		return $this->traitCall($name, $args);
 	}
 
 	//======================= querying part =======================//

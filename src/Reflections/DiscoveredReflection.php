@@ -4,9 +4,11 @@ namespace Flunorette\Reflections;
 
 use Flunorette\Connection;
 use Nette\Caching\Cache;
-use Nette\Object;
+use Nette\SmartObject;
 
-class DiscoveredReflection extends Object implements IReflection {
+class DiscoveredReflection implements IReflection {
+
+    use SmartObject;
 
 	/** @var Connection */
 	protected $connection;
