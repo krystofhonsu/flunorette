@@ -1,5 +1,5 @@
 {
-	"name": "icaine/flunorette",
+	"name": "krystofhonsu/flunorette",
 	"type": "library",
 	"description": "Database layer based on Nette/Database, FluendPdo and NotOrm.",
 	"support": {
